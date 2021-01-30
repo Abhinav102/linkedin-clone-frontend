@@ -1,0 +1,12 @@
+<div class="panel panel-default">
+  <div class="container">
+    <div class="row">
+      <div class="panel-heading"><h3>Experience</h3></div>
+      <div *ngFor="let experience of experience_list" class="div">
+        <app-experience-element
+          [experience_detail]="experience"
+        ></app-experience-element>
+      </div>
+    </div>
+  </div>
+</div>
