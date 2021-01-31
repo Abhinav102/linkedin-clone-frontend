@@ -15,12 +15,12 @@ export class MainComponent implements OnInit {
       password: 'messi',
       email: 'messi@gmail.com',
       mobile: 9943253053,
-      description: 'developer',
-      roles: 'NA',
+      description: 'NA',
+      roles: 'Full stack developer',
       active: 'NA',
   }
 
   constructor() { }
-  
+
   ngOnInit(): void {}
 }

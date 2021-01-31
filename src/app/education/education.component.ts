@@ -11,22 +11,13 @@ export class EducationComponent implements OnInit {
   education_list: Array<Education> = [
     {
       id: 1,
-      role: 'professor',
+      role: 'BE',
       duration: 'year',
-      startMonth: 'jan',
-      endMonth: 'dec',
-      description: 'ES',
+      startMonth: '2017',
+      endMonth: '2021',
+      description: 'Vasavi College of Engineering',
       location: 'hyd',
-    },
-    {
-      id: 2,
-      role: 'professor',
-      duration: 'year',
-      startMonth: 'feb',
-      endMonth: 'nov',
-      description: 'DA',
-      location: 'hyd',
-    },
+    }
   ];
 
   constructor() {}

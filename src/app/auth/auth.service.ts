@@ -10,9 +10,6 @@ import {FormGroup} from '@angular/forms';
 })
 export class AuthService {
 
-  constructor(private http: HttpClient) {
-  }
-
   baseurl = {
     login: 'http://localhost:5002/user',
     signup: 'http://localhost:5002/signup',
@@ -49,6 +46,9 @@ export class AuthService {
     }
     console.log(errorMessage);
     return throwError(errorMessage);
+  }
+
+  constructor(private http: HttpClient) {
   }
 
 }

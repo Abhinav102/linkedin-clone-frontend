@@ -7,25 +7,17 @@ import { Experience } from '../IExperience';
   styleUrls: ['./experience.component.css'],
 })
 export class ExperienceComponent implements OnInit {
+  // tslint:disable-next-line:variable-name
   experience_list: Array<Experience> = [
     {
       id: 3,
-      role: 'watchmen',
-      duration: 'year',
-      startMonth: 'apr',
-      endMonth: 'jan',
-      description: 'vas',
-      location: 'bang',
-    },
-    {
-      id: 3,
       role: 'Assistant prof',
-      duration: 'year',
-      startMonth: 'apr',
-      endMonth: 'jan',
+      duration: '3',
+      startMonth: '2018',
+      endMonth: '2020',
       description: 'vas',
       location: 'bang',
-    },
+    }
   ];
 
   constructor() {}

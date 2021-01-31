@@ -3,6 +3,7 @@ import {FormGroup, FormControl, Validators} from '@angular/forms';
 import {HttpErrorResponse} from '@angular/common/http';
 import {Auth} from '../IAuth';
 import {AuthService} from './auth.service';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-auth',
@@ -22,6 +23,7 @@ export class AuthComponent implements OnInit {
         localStorage.setItem('token', data.message);
         localStorage.setItem('user', loginForm.value.username);
         console.log(data);
+        this.router.navigateByUrl(`profile`);
       },
       (err: HttpErrorResponse) => {
         console.log(err);
@@ -35,7 +37,7 @@ export class AuthComponent implements OnInit {
   }
 
 
-  constructor(private authService: AuthService) { }
+  constructor(private authService: AuthService, private router: Router) { }
 
   ngOnInit(): void {
   }

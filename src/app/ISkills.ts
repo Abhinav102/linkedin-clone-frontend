@@ -1,4 +1,4 @@
-import { User } from "./IAuth";
+import { User } from './IAuth';
 
 export interface Skills {
     language: Language;
