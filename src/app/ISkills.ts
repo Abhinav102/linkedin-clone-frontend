@@ -1,7 +1,7 @@
 import { User } from "./IAuth";
 
 export interface Skills {
-    language?: Language;
+    language: Language;
     id: number;
     user?: User;
 }

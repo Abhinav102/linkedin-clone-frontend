@@ -1,5 +1,6 @@
 export interface Auth {
-    
+  message: string;
+  messageType: string;
 }
 
 export interface User {

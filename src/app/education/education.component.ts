@@ -7,6 +7,7 @@ import { Education } from '../IEducation';
   styleUrls: ['./education.component.css'],
 })
 export class EducationComponent implements OnInit {
+  // tslint:disable-next-line:variable-name
   education_list: Array<Education> = [
     {
       id: 1,
