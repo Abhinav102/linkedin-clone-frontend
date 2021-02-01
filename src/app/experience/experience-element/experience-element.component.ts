@@ -10,6 +10,7 @@ export class ExperienceElementComponent implements OnInit {
   constructor() {}
 
   @Input()
+    // tslint:disable-next-line:variable-name
   experience_detail!: Experience;
 
   ngOnInit(): void {}

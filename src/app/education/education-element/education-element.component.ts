@@ -9,6 +9,7 @@ import { Education } from 'src/app/IEducation';
 export class EducationElementComponent implements OnInit {
   constructor() {}
   @Input()
+    // tslint:disable-next-line:variable-name
   education_detail!: Education;
   ngOnInit(): void {}
 }

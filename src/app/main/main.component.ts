@@ -11,14 +11,14 @@ export class MainComponent implements OnInit {
     {
       id: 8,
       username: '@messi',
-      name: 'messi',
+      name: 'Sachin',
       password: 'messi',
       email: 'messi@gmail.com',
       mobile: 9943253053,
       description: 'NA',
       roles: 'Full stack developer',
       active: 'NA',
-  }
+  };
 
   constructor() { }
 

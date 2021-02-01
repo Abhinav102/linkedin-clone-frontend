@@ -1,16 +1,22 @@
-<section class="sample-app-content">
-  <h1>Sign Up</h1>
-  <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" >
-    <p>
-      <label>Username:</label>
-      <input type="text" formControlName="username">
-    </p>
-    <p>
-      <label>Password:</label>
-      <input type="password" formControlName="password">
-    </p>
-    <p>
-      <button type="submit" [disabled]="!loginForm.valid">Submit</button>
-    </p>
-  </form>
-</section>
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <section class="sample-app-content">
+        <h1>Sign Up</h1>
+        <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+          <p>
+            <label>Username:</label>
+            <input type="text" formControlName="username">
+          </p>
+          <p>
+            <label>Password:</label>
+            <input type="password" formControlName="password">
+          </p>
+          <p>
+            <button type="submit" [disabled]="!loginForm.valid">Submit</button>
+          </p>
+        </form>
+      </section>
+    </div>
+  </div>
+</div>

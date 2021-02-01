@@ -11,7 +11,7 @@ export class ExperienceComponent implements OnInit {
   experience_list: Array<Experience> = [
     {
       id: 3,
-      role: 'Assistant prof',
+      role: 'Fresher',
       duration: '3',
       startMonth: '2018',
       endMonth: '2020',

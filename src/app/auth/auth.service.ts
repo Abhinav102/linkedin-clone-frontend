@@ -11,7 +11,7 @@ import {FormGroup} from '@angular/forms';
 export class AuthService {
 
   baseurl = {
-    login: 'http://localhost:5002/user',
+    login: 'http://localhost:5003/user',
     signup: 'http://localhost:5002/signup',
   };
 
@@ -28,14 +28,6 @@ export class AuthService {
         catchError(error => this.errorHandle(error))
       );
   }
-
-  // signOut(): Observable<any> {
-  //   return this.http.get<any>(this.baseurl + '/signout')
-  //     .pipe(
-  //       retry(1),
-  //       catchError(this.errorHandle)
-  //     );
-  // }
 
   errorHandle(error: any): Observable<never> {
     let errorMessage = '';
