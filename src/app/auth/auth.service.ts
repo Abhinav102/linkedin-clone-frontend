@@ -12,7 +12,6 @@ export class AuthService {
 
   baseurl = {
     login: 'http://localhost:5003/user',
-    signup: 'http://localhost:5002/signup',
   };
 
   httpOptions = {
