@@ -1,0 +1,46 @@
+<div class="profile">
+  <h2 class="name">Register User</h2>
+</div>
+<div class="dashboard">
+  <form class="user-information .col-sm-" [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+    <div class="element">
+      <label for="username" class="col-sm-4 col-form-label">Username:</label>
+      <div class="col-sm-8">
+        <input id="username" type="text" placeholder="Enter Username" formControlName="username">
+      </div>
+    </div>
+    <div class="element">
+      <label for="password" class="col-sm-4 col-form-label">Password:</label>
+      <div class="col-sm-8">
+        <input id="password" type="password" placeholder="Enter Password" formControlName="password">
+      </div>
+    </div>
+    <div class="element">
+      <label for="name" class="col-sm-4 col-form-label">Name:</label>
+      <div class="col-sm-8">
+        <input id="name" type="text" placeholder="Enter your Name" formControlName="name">
+      </div>
+    </div>
+    <div class="element">
+      <label for="email" class="col-sm-4 col-form-label">Email ID:</label>
+      <div class="col-sm-8">
+        <input id="email" type="email" placeholder="Enter Email ID" formControlName="email">
+      </div>
+    </div>
+    <div class="element">
+      <label for="mobile" class="col-sm-4 col-form-label">Mobile:</label>
+      <div class="col-sm-8">
+        <input id="mobile" type="text" placeholder="Enter Mobile No" formControlName="mobile">
+      </div>
+    </div>
+    <div class="element">
+      <label for="description" class="col-sm-4 col-form-label">Description:</label>
+      <div class="col-sm-8">
+        <input id="description" type="text" placeholder="Enter Description" formControlName="description">
+      </div>
+    </div>
+    <button class="btn btn-success" type="submit" [disabled]="!registerForm.valid">Register</button>
+    <button class="btn btn-secondary right" type="reset">Reset</button>
+  </form>
+</div>
+
