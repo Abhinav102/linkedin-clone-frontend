@@ -14,4 +14,4 @@ import {ReactiveFormsModule} from '@angular/forms';
     ],
   exports: [RegistrationComponent],
 })
-export class RegistraionModule {}
+export class RegistrationModule {}

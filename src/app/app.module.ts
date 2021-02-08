@@ -7,7 +7,7 @@ import {AppComponent} from './app.component';
 import {AuthModule} from './auth/auth.module';
 import {MainModule} from './main/main.module';
 import {HttpClientModule} from '@angular/common/http';
-import {RegistraionModule} from './registration/registration.module';
+import {RegistrationModule} from './registration/registration.module';
 
 @NgModule({
   declarations: [
@@ -18,7 +18,7 @@ import {RegistraionModule} from './registration/registration.module';
     AppRoutingModule,
     AuthModule,
     MainModule,
-    RegistraionModule,
+    RegistrationModule,
     FormsModule,
     HttpClientModule
   ],
