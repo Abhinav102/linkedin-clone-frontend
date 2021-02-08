@@ -4,7 +4,7 @@ export interface Auth {
 }
 
 export interface User {
-  id: number;
+  id?: number;
   username: string;
   name: string;
   password: string;

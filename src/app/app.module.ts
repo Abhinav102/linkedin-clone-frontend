@@ -7,7 +7,7 @@ import {AppComponent} from './app.component';
 import {AuthModule} from './auth/auth.module';
 import {MainModule} from './main/main.module';
 import {HttpClientModule} from '@angular/common/http';
-
+import {RegistraionModule} from './registration/registration.module';
 
 @NgModule({
   declarations: [
@@ -18,6 +18,7 @@ import {HttpClientModule} from '@angular/common/http';
     AppRoutingModule,
     AuthModule,
     MainModule,
+    RegistraionModule,
     FormsModule,
     HttpClientModule
   ],

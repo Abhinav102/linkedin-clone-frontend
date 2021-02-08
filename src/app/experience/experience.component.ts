@@ -1,5 +1,8 @@
-import { Component, OnInit } from '@angular/core';
-import { Experience } from '../IExperience';
+import {Component, OnInit} from '@angular/core';
+import {Experience} from '../IExperience';
+import {ActivatedRoute, Router} from '@angular/router';
+import {User} from '../IAuth';
+import {ExperienceService} from './experience.service';
 
 @Component({
   selector: 'app-experience',
@@ -7,20 +10,33 @@ import { Experience } from '../IExperience';
   styleUrls: ['./experience.component.css'],
 })
 export class ExperienceComponent implements OnInit {
-  // tslint:disable-next-line:variable-name
-  experience_list: Array<Experience> = [
-    {
-      id: 3,
-      role: 'Fresher',
-      duration: '3',
-      startMonth: '2018',
-      endMonth: '2020',
-      description: 'vas',
-      location: 'bang',
+
+  experienceList: Array<Experience> = [];
+
+  constructor(private activeRoute: ActivatedRoute, private router: Router, private experienceService: ExperienceService) {
+  }
+
+
+  username = localStorage.getItem('user');
+
+  onAddClick(): void {
+    this.router.navigateByUrl(`experience/${this.username}`);
+  }
+
+  routeToEdit(id: number): void {
+    this.router.navigateByUrl(`experience/${this.username}/edit/${id}`);
+  }
+
+  ngOnInit(): void {
+    if (this.username) {
+      this.experienceService.getExperiences(this.username).subscribe(
+        (data: Array<Experience>) => {
+          this.experienceList = data;
+          console.log(data);
+        },
+        error => console.log(error)
+      );
     }
-  ];
 
-  constructor() {}
-
-  ngOnInit(): void {}
+  }
 }

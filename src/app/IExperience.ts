@@ -14,7 +14,7 @@ export interface Experience {
 
 interface Company {
   id: number;
-  Url: string;
+  url: string;
   name: string;
   rating: string;
 }

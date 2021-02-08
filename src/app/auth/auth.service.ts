@@ -2,26 +2,19 @@ import {Injectable} from '@angular/core';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
 import {Observable, throwError} from 'rxjs';
 import {catchError, retry} from 'rxjs/operators';
-import {Auth} from '../IAuth';
+import {User} from '../IAuth';
 import {FormGroup} from '@angular/forms';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
-
-  baseurl = {
-    login: 'http://localhost:5003/user',
-  };
-
-  httpOptions = {
-    headers: new HttpHeaders({
-      'Content-Type': 'application/json',
-    })
-  };
-
-  signInToken(loginForm: FormGroup): Observable<any> {
-    return this.http.get<Auth>(this.baseurl.login + `/${loginForm.value.username}`,  this.httpOptions)
+  onLogin(loginForm: FormGroup): Observable<any> {
+    return this.http.get<User>('http://localhost:5003/user' + `/${loginForm.value.username}`,
+      {
+        headers: new HttpHeaders({'Content-Type': 'application/json'})
+      }
+      )
       .pipe(
         retry(1),
         catchError(error => this.errorHandle(error))
