@@ -1,52 +1,59 @@
-<div class="glyphicon-experienceAdd">
-  <h2 class="name">Add Experience</h2>
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="glyphicon-experienceAdd">
+        <h2 class="name">Add Experience</h2>
+      </div>
+      <div class="dashboard">
+        <form class="user-information .col-sm-4" [formGroup]="addExperienceForm" (ngSubmit)="onSubmit()">
+          <div class="element">
+            <label for="company" class="col-sm-4 col-form-label">Company:</label>
+            <div class="col-sm-8">
+              <input id="company" class="form-control" type="text" placeholder="Enter Company" formControlName="company">
+            </div>
+          </div>
+          <div class="element">
+            <label for="role" class="col-sm-4 col-form-label">Role:</label>
+            <div class="col-sm-8">
+              <input id="role" class="form-control" type="text" placeholder="Enter Role" formControlName="role">
+            </div>
+          </div>
+          <div class="element">
+            <label for="duration" class="col-sm-4 col-form-label">Duration:</label>
+            <div class="col-sm-8">
+              <input id="duration" class="form-control" type="text" placeholder="Enter duration" formControlName="duration">
+            </div>
+          </div>
+          <div class="element">
+            <label for="startMonth" class="col-sm-4 col-form-label">Start Month:</label>
+            <div class="col-sm-8">
+              <input id="startMonth" class="form-control" type="email" placeholder="Enter start month" formControlName="startMonth">
+            </div>
+          </div>
+          <div class="element">
+            <label for="endMonth" class="col-sm-4 col-form-label">End Month:</label>
+            <div class="col-sm-8">
+              <input id="endMonth" class="form-control" type="text" placeholder="Enter end month" formControlName="endMonth">
+            </div>
+          </div>
+          <div class="element">
+            <label for="description" class="col-sm-4 col-form-label">Description:</label>
+            <div class="col-sm-8">
+              <input id="description" class="form-control" type="text" placeholder="Enter Description" formControlName="description">
+            </div>
+          </div>
+          <div class="element">
+            <label for="location" class="col-sm-4 col-form-label">Location:</label>
+            <div class="col-sm-8">
+              <input id="location" class="form-control" type="text" placeholder="Enter location" formControlName="location">
+            </div>
+          </div>
+          <button class="btn btn-success" type="submit">Add</button>
+          <button class="btn btn-info right" type="reset">Reset</button>
+        </form>
+      </div>
+    </div>
+  </div>
 </div>
-<div class="dashboard">
-  <form class="user-information .col-sm-" [formGroup]="addExperienceForm" (ngSubmit)="onSubmit()">
-    <div class="element">
-      <label for="company" class="col-sm-4 col-form-label">Company:</label>
-      <div class="col-sm-8">
-        <input id="company" type="text" placeholder="Enter Company" formControlName="company">
-      </div>
-    </div>
-    <div class="element">
-      <label for="role" class="col-sm-4 col-form-label">Role:</label>
-      <div class="col-sm-8">
-        <input id="role" type="text" placeholder="Enter Role" formControlName="role">
-      </div>
-    </div>
-    <div class="element">
-      <label for="duration" class="col-sm-4 col-form-label">Duration:</label>
-      <div class="col-sm-8">
-        <input id="duration" type="text" placeholder="Enter duration" formControlName="duration">
-      </div>
-    </div>
-    <div class="element">
-      <label for="startMonth" class="col-sm-4 col-form-label">Start Month:</label>
-      <div class="col-sm-8">
-        <input id="startMonth" type="email" placeholder="Enter start month" formControlName="startMonth">
-      </div>
-    </div>
-    <div class="element">
-      <label for="endMonth" class="col-sm-4 col-form-label">End Month:</label>
-      <div class="col-sm-8">
-        <input id="endMonth" type="text" placeholder="Enter end month" formControlName="endMonth">
-      </div>
-    </div>
-    <div class="element">
-      <label for="description" class="col-sm-4 col-form-label">Description:</label>
-      <div class="col-sm-8">
-        <input id="description" type="text" placeholder="Enter Description" formControlName="description">
-      </div>
-    </div>
-    <div class="element">
-      <label for="location" class="col-sm-4 col-form-label">Location:</label>
-      <div class="col-sm-8">
-        <input id="location" type="text" placeholder="Enter location" formControlName="location">
-      </div>
-    </div>
-    <button class="btn btn-success" type="submit" >Add</button>
-    <button class="btn btn-secondary right" type="reset">Reset</button>
-  </form>
-</div>
+
 

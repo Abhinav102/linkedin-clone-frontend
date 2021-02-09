@@ -55,11 +55,9 @@ export class EducationEditComponent implements OnInit {
     if (this.id) {
       this.educationService.deleteEducation(this.id).subscribe(
         data => {
-          console.log('deleted ', this.id);
-
           this.router.navigateByUrl('profile');
         },
-        error => console.log('erorr occured')
+        error => console.log('Error occurred')
       );
     }
   }
@@ -68,10 +66,9 @@ export class EducationEditComponent implements OnInit {
     if (this.id) {
       this.educationService.updateEducation(this.editEducationForm, this.id).subscribe(
         data => {
-          console.log('Submitted successfully');
           this.router.navigateByUrl('profile');
         },
-        error => console.log('Error occured')
+        error => console.log('Error occurred')
       );
     }
   }

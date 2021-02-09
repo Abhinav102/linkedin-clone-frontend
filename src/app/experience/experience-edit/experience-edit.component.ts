@@ -55,11 +55,9 @@ export class ExperienceEditComponent implements OnInit {
     if (this.id) {
       this.experienceService.deleteExperience(this.id).subscribe(
         data => {
-          console.log('deleted ', this.id);
-
           this.router.navigateByUrl('profile');
         },
-        error => console.log('erorr occured')
+        error => console.log('Error occurred')
       );
     }
   }
@@ -68,10 +66,9 @@ export class ExperienceEditComponent implements OnInit {
     if (this.id) {
       this.experienceService.updateExperience(this.editExperienceForm, this.id).subscribe(
         data => {
-          console.log('Submitted edited successfully');
           this.router.navigateByUrl('profile');
         },
-        error => console.log('Error occured')
+        error => console.log('Error occurred')
       );
     }
   }

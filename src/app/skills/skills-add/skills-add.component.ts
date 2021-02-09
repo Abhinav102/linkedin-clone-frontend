@@ -29,10 +29,9 @@ export class SkillsAddComponent implements OnInit {
   onSubmit(): void {
     this.skillsService.addSkills(this.addSkillsForm).subscribe(
       data => {
-        console.log('Submitted successfully');
         this.router.navigateByUrl('profile');
       },
-      error => console.log('Error occured')
+      error => console.log('Error occurred')
     );
   }
 

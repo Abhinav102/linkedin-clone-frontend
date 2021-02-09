@@ -29,10 +29,9 @@ export class EducationAddComponent implements OnInit {
   onSubmit(): void {
     this.educationService.addEducation(this.addEducationForm).subscribe(
       data => {
-        console.log('Submitted successfully');
         this.router.navigateByUrl('profile');
       },
-      error => console.log('Error occured')
+      error => console.log('Error occurred')
     );
   }
 

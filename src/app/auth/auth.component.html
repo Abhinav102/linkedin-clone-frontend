@@ -6,14 +6,14 @@
         <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
           <p>
             <label>Username:</label>
-            <input type="text" formControlName="username" />
+            <input type="text" placeholder="User Name:" class="form-control" formControlName="username"/>
           </p>
           <p>
             <label>Password:</label>
-            <input type="password" formControlName="password" />
+            <input type="password" placeholder="Password:" class="form-control" formControlName="password"/>
           </p>
           <p>
-            <button type="submit" [disabled]="!loginForm.valid">Submit</button>
+            <button type="submit" style="cursor: pointer"  [disabled]="!loginForm.valid">Submit</button>
           </p>
         </form>
       </section>
