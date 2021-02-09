@@ -36,7 +36,7 @@ export class ExperienceAddComponent implements OnInit {
   onSubmit(): void {
     this.experienceService.addExperience(this.addExperienceForm).subscribe(
       data => {
-        console.log('Submitted successfully');
+        console.log('Submitted added successfully');
         this.router.navigateByUrl('profile');
       },
       error => console.log('Error occured')

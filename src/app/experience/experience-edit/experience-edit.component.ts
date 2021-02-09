@@ -68,7 +68,7 @@ export class ExperienceEditComponent implements OnInit {
     if (this.id) {
       this.experienceService.updateExperience(this.editExperienceForm, this.id).subscribe(
         data => {
-          console.log('Submitted successfully');
+          console.log('Submitted edited successfully');
           this.router.navigateByUrl('profile');
         },
         error => console.log('Error occured')

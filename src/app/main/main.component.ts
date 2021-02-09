@@ -9,7 +9,16 @@ import {HttpErrorResponse} from '@angular/common/http';
   styleUrls: ['./main.component.css'],
 })
 export class MainComponent implements OnInit {
-  user!: User;
+  user: User = {
+    username: '',
+    name: '',
+    password: '',
+    email: '',
+    mobile: 0,
+    description: '',
+    roles: '',
+    active: '',
+  };
 
   username = localStorage.getItem('user');
 

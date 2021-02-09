@@ -34,7 +34,7 @@ export class EducationService {
   }
 
   updateEducation(educationForm: FormGroup, id: string): Observable<any> {
-    return this.http.put<Education>(`http://localhost:5003/education/${id}`, JSON.stringify(educationForm.value),
+    return this.http.put<any>(`http://localhost:5003/education/${id}`, JSON.stringify(educationForm.value),
       {
         headers: new HttpHeaders({'Content-Type': 'application/json'})
       }

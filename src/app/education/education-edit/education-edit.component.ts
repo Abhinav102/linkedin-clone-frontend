@@ -43,7 +43,7 @@ export class EducationEditComponent implements OnInit {
             duration: this.educationDetail.duration,
             description: this.educationDetail.description,
             location: this.educationDetail.location,
-            user: this.educationDetail.user,
+            user: this.educationDetail.user?.username,
           });
         },
         error => console.log('error')

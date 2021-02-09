@@ -24,6 +24,17 @@ export class SkillsComponent implements OnInit {
     this.router.navigateByUrl(`skills/${this.username}/edit/${id}`);
   }
 
+  onDelete(id: number): void {
+      this.skillsService.deleteSkills(`${id}`).subscribe(
+        data => {
+          console.log('Deleted', id);
+          this.ngOnInit();
+        },
+        // tslint:disable-next-line:no-shadowed-variable
+        error => console.log('error occured')
+      );
+  }
+
   ngOnInit(): void {
     if (this.username) {
       this.skillsService.getSkills(this.username).subscribe(

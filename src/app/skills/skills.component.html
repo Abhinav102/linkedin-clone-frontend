@@ -16,9 +16,16 @@
               <p>{{skills.language?.name}}</p>
             </div>
           </div>
-          <button class="btn btn-info" type="submit" (click)="routeToEdit(skills.id)">Update</button>
+          <button class="btn btn-danger" type="button" (click)="onDelete(skills.id)">Delete</button>
         </div>
         <br>
+      </div>
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <h5 *ngIf="skillsList.length == 0">Skills are yet to be added!</h5>
+          </div>
+        </div>
       </div>
     </div>
   </div>
