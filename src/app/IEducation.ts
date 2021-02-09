@@ -2,7 +2,7 @@ import { User } from './IAuth';
 
 export interface Education {
   id: number;
-  role: string;
+  course: string;
   college?: College;
   duration: string;
   startMonth: string;
@@ -14,7 +14,7 @@ export interface Education {
 
 interface College {
   id: number;
-  Url: string;
+  url: string;
   name: string;
   rating: string;
 }

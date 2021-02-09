@@ -1,5 +1,7 @@
-import { Component, Input, OnInit } from '@angular/core';
-import { User } from '../IAuth';
+import {Component, Input, OnInit} from '@angular/core';
+import {User} from '../IAuth';
+import {MainService} from './main.service';
+import {HttpErrorResponse} from '@angular/common/http';
 
 @Component({
   selector: 'app-main',
@@ -7,20 +9,24 @@ import { User } from '../IAuth';
   styleUrls: ['./main.component.css'],
 })
 export class MainComponent implements OnInit {
-  user : User =
-    {
-      id: 8,
-      username: '@messi',
-      name: 'Sachin',
-      password: 'messi',
-      email: 'messi@gmail.com',
-      mobile: 9943253053,
-      description: 'NA',
-      roles: 'Full stack developer',
-      active: 'NA',
-  };
+  user!: User;
 
-  constructor() { }
+  username = localStorage.getItem('user');
 
-  ngOnInit(): void {}
+  constructor(private mainService: MainService) {
+
+  }
+
+  ngOnInit(): void {
+    if (this.username) {
+      this.mainService.getUser(this.username).subscribe(
+        (data: User) => {
+          this.user = data;
+        },
+        (error: HttpErrorResponse) => console.log(error)
+      );
+    }
+
+  }
+
 }

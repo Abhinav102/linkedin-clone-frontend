@@ -14,7 +14,6 @@ export class ExperienceEditComponent implements OnInit {
   @Input()
   experienceDetail!: Experience;
 
-
   constructor(private activatedRoute: ActivatedRoute, private experienceService: ExperienceService, private router: Router) {
   }
 
@@ -30,19 +29,6 @@ export class ExperienceEditComponent implements OnInit {
     location: new FormControl(''),
     user: new FormControl(''),
   });
-
-  onDelete(): void {
-    if (this.id) {
-      this.experienceService.deleteExperience(this.id).subscribe(
-        data => {
-          console.log('deleted ', this.id);
-
-          this.router.navigateByUrl('profile');
-        },
-        error => console.log('erorr occured')
-      );
-    }
-  }
 
   ngOnInit(): void {
     if (this.id) {
@@ -61,6 +47,19 @@ export class ExperienceEditComponent implements OnInit {
           });
         },
         error => console.log('error')
+      );
+    }
+  }
+
+  onDelete(): void {
+    if (this.id) {
+      this.experienceService.deleteExperience(this.id).subscribe(
+        data => {
+          console.log('deleted ', this.id);
+
+          this.router.navigateByUrl('profile');
+        },
+        error => console.log('erorr occured')
       );
     }
   }

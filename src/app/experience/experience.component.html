@@ -13,7 +13,8 @@
         <div class="container">
           <div class="row">
             <div class="col-md-12">
-              <p>{{experience.role}}</p>
+              <p>{{experience.company?.name}}</p>
+              <h6>{{experience.startMonth}} - {{experience.endMonth}}</h6>
             </div>
           </div>
           <button class="btn btn-info" type="submit" (click)="routeToEdit(experience.id)">Update</button>

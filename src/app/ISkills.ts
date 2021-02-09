@@ -8,7 +8,7 @@ export interface Skills {
 
 interface Language {
   id?: number;
-  Url?: string;
+  url?: string;
   name: string;
   rating?: string;
 }

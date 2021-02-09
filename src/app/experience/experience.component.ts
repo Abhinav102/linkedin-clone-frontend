@@ -1,7 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {Experience} from '../IExperience';
 import {ActivatedRoute, Router} from '@angular/router';
-import {User} from '../IAuth';
 import {ExperienceService} from './experience.service';
 
 @Component({
@@ -15,7 +14,6 @@ export class ExperienceComponent implements OnInit {
 
   constructor(private activeRoute: ActivatedRoute, private router: Router, private experienceService: ExperienceService) {
   }
-
 
   username = localStorage.getItem('user');
 

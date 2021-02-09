@@ -1,5 +1,7 @@
-import { Component, OnInit } from '@angular/core';
-import { Skills } from '../ISkills';
+import {Component, OnInit} from '@angular/core';
+import {Skills} from '../ISkills';
+import {ActivatedRoute, Router} from '@angular/router';
+import {SkillsService} from './skills.service';
 
 @Component({
   selector: 'app-skills',
@@ -7,18 +9,31 @@ import { Skills } from '../ISkills';
   styleUrls: ['./skills.component.css'],
 })
 export class SkillsComponent implements OnInit {
-  skills_list: Array<Skills> = [
-    {
-      language: { name: 'java' },
-      id: 5,
-    },
-    {
-      language: { name: 'python' },
-      id: 6,
-    },
-  ];
+  skillsList: Array<Skills> = [];
 
-  constructor() {}
+  constructor(private activeRoute: ActivatedRoute, private router: Router, private skillsService: SkillsService) {
+  }
 
-  ngOnInit(): void {}
+  username = localStorage.getItem('user');
+
+  onAddClick(): void {
+    this.router.navigateByUrl(`skills/${this.username}`);
+  }
+
+  routeToEdit(id: number): void {
+    this.router.navigateByUrl(`skills/${this.username}/edit/${id}`);
+  }
+
+  ngOnInit(): void {
+    if (this.username) {
+      this.skillsService.getSkills(this.username).subscribe(
+        (data: Array<Skills>) => {
+          this.skillsList = data;
+          console.log(data);
+        },
+        error => console.log(error)
+      );
+    }
+
+  }
 }

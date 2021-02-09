@@ -1,21 +1,24 @@
-<div class="row">
-  <div class="col-xs-12">
-      <button class="btn btn-info" type="submit">Update</button>
-      <button class="btn btn-danger" type="submit">Delete</button>
-  </div>
-</div>
-
 <div class="panel panel-default">
   <div class="container">
     <div class="row">
-      <button>
-        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-plus" viewBox="0 0 16 16">
-          <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"/>
+      <button (click)="onAddClick()">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="add"
+             viewBox="0 0 16 16">
+          <path
+            d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"/>
         </svg>
       </button>
       <div class="panel-heading"><h3>Skills</h3></div>
-      <div *ngFor="let skill of skills_list" class="div">
-        <app-skills-element [skills_detail]="skill"> </app-skills-element>
+      <div *ngFor="let skills of skillsList" class="div">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-12">
+              <p>{{skills.language?.name}}</p>
+            </div>
+          </div>
+          <button class="btn btn-info" type="submit" (click)="routeToEdit(skills.id)">Update</button>
+        </div>
+        <br>
       </div>
     </div>
   </div>

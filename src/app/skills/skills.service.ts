@@ -2,23 +2,23 @@ import {Injectable} from '@angular/core';
 import {HttpClient, HttpHeaders, HttpParams} from '@angular/common/http';
 import {FormGroup} from '@angular/forms';
 import {Observable} from 'rxjs';
-import {Experience} from '../IExperience';
+import {Skills} from '../ISkills';
 
 @Injectable({
   providedIn: 'root'
 })
-export class ExperienceService {
+export class SkillsService {
 
-  addExperience(experienceForm: FormGroup): Observable<any> {
-    return this.http.post<Experience>('http://localhost:5003/experience', JSON.stringify(experienceForm.value),
+  addSkills(skillsForm: FormGroup): Observable<any> {
+    return this.http.post<Skills>('http://localhost:5003/skills', JSON.stringify(skillsForm.value),
       {
         headers: new HttpHeaders({'Content-Type': 'application/json'})
       }
     );
   }
 
-  getExperiences(username: string ): Observable<any> {
-    return this.http.get<Array<Experience>>('http://localhost:5003/experience',
+  getSkills(username: string ): Observable<any> {
+    return this.http.get<Array<Skills>>('http://localhost:5003/skills',
       {
         headers: new HttpHeaders({'Content-Type': 'application/json'}),
         params: new HttpParams().set('user', username)
@@ -26,24 +26,24 @@ export class ExperienceService {
     );
   }
 
-  getExperience(id: string ): Observable<any> {
-    return this.http.get<Experience>(`http://localhost:5003/experience/${id}`,
+  getSkill(id: string ): Observable<any> {
+    return this.http.get<Skills>(`http://localhost:5003/skills/${id}`,
       {
         headers: new HttpHeaders({'Content-Type': 'application/json'}),
       }
     );
   }
 
-  updateExperience(experienceForm: FormGroup, id: string): Observable<any> {
-    return this.http.put<Experience>(`http://localhost:5003/experience/${id}`, JSON.stringify(experienceForm.value),
+  updateSkills(experienceForm: FormGroup, id: string): Observable<any> {
+    return this.http.put<Skills>(`http://localhost:5003/skills/${id}`, JSON.stringify(experienceForm.value),
       {
         headers: new HttpHeaders({'Content-Type': 'application/json'})
       }
     );
   }
 
-  deleteExperience(id: string ): Observable<any> {
-    return this.http.delete<any>(`http://localhost:5003/experience/${id}`,
+  deleteSkills(id: string ): Observable<any> {
+    return this.http.delete<any>(`http://localhost:5003/skills/${id}`,
       {
         headers: new HttpHeaders({'Content-Type': 'application/json'}),
       }

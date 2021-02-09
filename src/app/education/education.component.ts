@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {Education} from '../IEducation';
 import {EducationService} from './education.service';
+import {ActivatedRoute, Router} from '@angular/router';
 
 @Component({
   selector: 'app-education',
@@ -8,30 +9,30 @@ import {EducationService} from './education.service';
   styleUrls: ['./education.component.css'],
 })
 export class EducationComponent implements OnInit {
-  // tslint:disable-next-line:variable-name
-  // tslint:disable-next-line:variable-name
-  education_list: Array<Education> = [
-    // {
-    //   id: 1,
-    //   role: 'BE',
-    //   duration: 'year',
-    //   startMonth: '2017',
-    //   endMonth: '2021',
-    //   description: 'Vasavi College of Engineering',
-    //   location: 'hyd',
-    // }
-  ];
 
-  // tslint:disable-next-line:typedef
-  showEducation() {
-    this.educationService.getEducation()
-      .subscribe((data: Array<Education>) => (this.education_list = data));
+  educationList: Array<Education> = [];
+
+  username = localStorage.getItem('user');
+
+  onAddClick(): void {
+    this.router.navigateByUrl(`education/${this.username}`);
   }
 
-  constructor(private educationService: EducationService) {
+  constructor(private educationService: EducationService, private activeRoute: ActivatedRoute, private router: Router) {
+  }
+
+  routeToEdit(id: number): void {
+    this.router.navigateByUrl(`education/${this.username}/edit/${id}`);
   }
 
   ngOnInit(): void {
-    this.showEducation();
+    if (this.username) {
+      this.educationService.getEducations(this.username).subscribe(
+        (data: Array<Education>) => {
+          this.educationList = data;
+          console.log(data);
+        }
+      );
+    }
   }
 }

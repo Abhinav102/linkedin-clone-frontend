@@ -1,5 +1,5 @@
-import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
+import {NgModule} from '@angular/core';
+import {RouterModule, Routes} from '@angular/router';
 import {ExperienceAddComponent} from './experience-add/experience-add.component';
 import {ExperienceEditComponent} from './experience-edit/experience-edit.component';
 
@@ -19,4 +19,5 @@ const routes: Routes = [
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule]
 })
-export class ExperienceRoutingModule{ }
+export class ExperienceRoutingModule {
+}
